@@ -1,0 +1,46 @@
+.visible-screen{
+  visibility: visible !important;
+}
+.go-back-arrow {
+  visibility: hidden;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  background-color: #ccc;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 38px;
+  cursor: pointer;
+}
+
+.fa-arrow-left {
+  color: white;
+}
+#grid {
+  width: 100vw; /* 100% ширины окна просмотра */
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(100, 20px);
+  grid-template-rows: repeat(30, 20px);
+  /* border: 2px solid black; */
+}
+
+      .cell {
+          width: 20px;
+          height: 20px;
+          /* border: 1px solid #ccc; */
+      }
+
+      .cell.alive {
+          background-color: #000;
+      }
+
+
+

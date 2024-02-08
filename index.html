@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Жизнь</title>
+    <script
+      src="https://kit.fontawesome.com/651f2c9510.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./main-screen.css">
+    <link rel="stylesheet" href="./levels-screen.css" />
+    <link rel="stylesheet" href="./game-screen.css">
+    <link rel="stylesheet" href="sandbox.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+
+  </head>
+
+  <body>
+    <div id="grid"></div>
+    <script src="./back_overlay.js"></script>
+    <button class="go-back-arrow">
+      <i class="fas fa-arrow-left fa-xs"></i>
+    </button>
+    <div class="container">
+      <h1 class="title">Жизнь</h1>
+      <p class="subtitle">Игра, которая идёт на жизнь в ирл.</p>
+      <button class="play-button">Играть</button>
+    </div>
+    <div class="levels">
+      
+      <h1 class="title">Выбери уровень</h1>
+      <div class="level-buttons">
+        <button class="disabled-button">Уровень 1</button>
+        <button class="disabled-button">Уровень 2</button>
+        <button class="disabled-button">Уровень 3</button>
+        <button class="sandbox-button">Создать песочницу</button>
+      </div>
+    </div>
+
+    <div class="game-screen">
+      <canvas id="canvas" width="500" height="500"></canvas>
+      <div class="game-screen-buttons">
+        <button id="startButton" class="round-button">&#9654;</button>
+        <button id="nextButton" class="round-button">Next gen</button>
+        <button id="clearButton" class="round-button" onclick="clearArrayUpdateCanvas()">Clear</button>
+      </div>
+
+      <div class="species">
+        <p>Cell type:</p>
+        <div class="hare sp_ch cell-active"></div>
+        <div class="wolf sp_ch"></div>
+        <div class="deer sp_ch"></div>
+      </div>
+    </div>
+    <div class="sandbox-container">
+      <div class="settings">
+        <div class="slider size-slider">
+          <label id="size-setting" for="width">Размер:</label>
+          <input type="range" id="width" min="100" max="500" step="10" value="300">
+        </div>
+        
+        <div class="slider">
+          <label for="animal">Животное:</label>
+          <select id="animal">
+            <option value="1">Заяц</option>
+            <option value="2">Волк</option>
+          </select>
+        </div>
+        <div class="slider">
+          <label for="steps">Шагов до смерти волка:</label>
+          <input type="range" id="steps" min="1" max="10" step="1" value="5">
+        </div>
+        <a href="#" class="button fully-create-sandbox">Создать песочницу</a>
+      </div>
+      <div class="map">
+        <canvas id="map-canvas" class="map-canvas"></canvas>
+      </div>
+    </div>
+    <script src="main.js"></script>
+
+  </body>
+</html>
